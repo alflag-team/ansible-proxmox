@@ -1,6 +1,6 @@
 ---
 - name: Create Zabbix Database
-  mysql_db:
+  community.mysql.mysql_db:
     login_user: "root"
     login_password: "{{ mysql_root_password }}"
     login_unix_socket: "{{ mysql_login_unix_socket }}"
@@ -8,7 +8,7 @@
     state: present
 
 - name: Create Zabbix User
-  mysql_user:
+  community.mysql.mysql_user:
     login_user: "root"
     login_password: "{{ mysql_root_password }}"
     login_unix_socket: "{{ mysql_login_unix_socket }}"
@@ -19,7 +19,7 @@
     state: present
 
 - name: Create zabbix_monitor User
-  mysql_user:
+  community.mysql.mysql_user:
     login_user: "root"
     login_password: "{{ mysql_root_password }}"
     login_unix_socket: "{{ mysql_login_unix_socket }}"
