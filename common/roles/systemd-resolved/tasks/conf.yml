@@ -4,7 +4,7 @@
     path: /etc/systemd/resolved.conf.d
     state: directory
     owner: root
-    ansible.builtin.group: root
+    group: root
     mode: "0755"
   become: true
   notify:
