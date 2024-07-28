@@ -1,12 +1,12 @@
 ---
 - name: User infra
   ansible.builtin.include_tasks:
-    ansible.builtin.file: user-infra.yml
+    file: user-infra.yml
     apply:
       become: true
 
 - name: User minecraft
   ansible.builtin.include_tasks:
-    ansible.builtin.file: user-minecraft.yml
+    file: user-minecraft.yml
     apply:
       become: true

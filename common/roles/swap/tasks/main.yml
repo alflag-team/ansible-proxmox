@@ -1,14 +1,14 @@
 ---
 - name: Check
   ansible.builtin.include_tasks:
-    ansible.builtin.file: check.yml
+    file: check.yml
   when:
     - not skip_swap | default(false)
     - ansible_virtualization_type != 'lxc'
 
 - name: Disable
   ansible.builtin.include_tasks:
-    ansible.builtin.file: disable.yml
+    file: disable.yml
   when:
     - not skip_swap | default(false)
     - ansible_virtualization_type != 'lxc'
@@ -17,7 +17,7 @@
 
 - name: Enable
   ansible.builtin.include_tasks:
-    ansible.builtin.file: enable.yml
+    file: enable.yml
   when:
     - not skip_swap | default(false)
     - ansible_virtualization_type != 'lxc'

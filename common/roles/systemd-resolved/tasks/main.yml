@@ -1,7 +1,7 @@
 ---
 - name: Setup configuration
   ansible.builtin.include_tasks:
-    ansible.builtin.file: conf.yml
+    file: conf.yml
   tags: systemd-resolved
   when: not skip_systemd_resolved | default(false)
 

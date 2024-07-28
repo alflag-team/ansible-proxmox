@@ -1,12 +1,12 @@
 ---
 - name: install mysql-server
   ansible.builtin.include_tasks:
-    ansible.builtin.file: install.yml
+    file: install.yml
 
 - name: Setup zabbiz database
   ansible.builtin.include_tasks:
-    ansible.builtin.file: db_zabbix.yml
+    file: db_zabbix.yml
 
 - name: Setup minecraft database
   ansible.builtin.include_tasks:
-    ansible.builtin.file: db_minecraft.yml
+    file: db_minecraft.yml
