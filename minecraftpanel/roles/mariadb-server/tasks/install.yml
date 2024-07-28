@@ -3,6 +3,7 @@
   ansible.builtin.apt:
     name:
       - mariadb-server
+      - mariadb-client
       - python3-pymysql
     state: present
   become: true
