@@ -7,3 +7,4 @@
     - mariadb-server
     - redis-server
     - php
+    - nginx
