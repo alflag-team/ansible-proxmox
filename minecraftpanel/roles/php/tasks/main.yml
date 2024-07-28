@@ -1,0 +1,4 @@
+---
+- name: install php
+  ansible.builtin.include_tasks:
+    file: install.yml
