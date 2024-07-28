@@ -1,7 +1,7 @@
 ---
 - name: Put wings.service
   ansible.builtin.copy:
-    src: wings.service
+    src: ./etc/systemd/system/wings.service
     dest: /etc/systemd/system/wings.service
     owner: root
     group: root
