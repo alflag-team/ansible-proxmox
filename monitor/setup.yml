@@ -1,0 +1,11 @@
+---
+- name: Setup monitor
+  hosts: monitor
+  ignore_unreachable: true
+
+  roles:
+    - apt
+    - mysql-server
+    - nginx
+    - php-fpm
+    - zabbix-server

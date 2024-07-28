@@ -1,0 +1,9 @@
+---
+- name: Setup minecraftv2
+  hosts: minecraftv2
+  ignore_unreachable: true
+
+  roles:
+    - apt
+    - docker
+    - wings

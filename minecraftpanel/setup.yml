@@ -1,0 +1,8 @@
+---
+- name: Setup minecraftpanel
+  hosts: minecraftpanel
+  ignore_unreachable: true
+
+  roles:
+    - mariadb-server
+    - redis-server

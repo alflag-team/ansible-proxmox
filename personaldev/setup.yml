@@ -1,0 +1,8 @@
+---
+- name: Setup personaldev
+  hosts: personaldev
+  ignore_unreachable: true
+
+  roles:
+    - apt
+    - docker

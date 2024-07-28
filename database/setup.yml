@@ -1,0 +1,8 @@
+---
+- name: Setup database
+  hosts: database
+  ignore_unreachable: true
+
+  roles:
+    - apt
+    - mysql-server
