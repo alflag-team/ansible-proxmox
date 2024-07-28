@@ -26,6 +26,7 @@
     login_unix_socket: "{{ mysql_login_unix_socket }}"
     name: ""
     state: absent
+  become: true
 
 - name: Copy mysqld.cnf
   ansible.builtin.copy:

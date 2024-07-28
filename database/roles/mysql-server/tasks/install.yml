@@ -17,6 +17,7 @@
     password: "{{ mysql_root_password }}"
     check_implicit_admin: true
     state: present
+  become: true
 
 - name: Remove anonymous users
   community.mysql.mysql_user:
@@ -25,6 +26,7 @@
     login_unix_socket: "{{ mysql_login_unix_socket }}"
     name: ""
     state: absent
+  become: true
 
 - name: Copy mysqld.cnf
   ansible.builtin.copy:

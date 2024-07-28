@@ -6,6 +6,7 @@
     login_unix_socket: "{{ mysql_login_unix_socket }}"
     name: "{{ mysql_minecraft_dbname }}"
     state: present
+  become: true
 
 - name: Create minecraft User
   community.mysql.mysql_user:
@@ -17,3 +18,4 @@
     host: "10.210.30.%"
     priv: "{{ mysql_minecraft_dbname }}.*:ALL"
     state: present
+  become: true

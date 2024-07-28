@@ -6,6 +6,7 @@
     login_unix_socket: "{{ mysql_login_unix_socket }}"
     name: "{{ mysql_zabbix_dbname }}"
     state: present
+  become: true
 
 - name: Create Zabbix User
   community.mysql.mysql_user:
@@ -17,6 +18,7 @@
     host: "10.210.2.%"
     priv: "zabbix.*:ALL"
     state: present
+  become: true
 
 - name: Create zabbix_monitor User
   community.mysql.mysql_user:
@@ -28,3 +30,4 @@
     host: "127.0.0.1"
     priv: "*.*:REPLICATION CLIENT,PROCESS,SHOW DATABASES,SHOW VIEW"
     state: present
+  become: true

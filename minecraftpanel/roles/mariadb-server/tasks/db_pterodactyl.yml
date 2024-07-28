@@ -6,6 +6,7 @@
     login_unix_socket: "{{ db_login_unix_socket }}"
     name: "{{ db_pterodactyl_database }}"
     state: present
+  become: true
 
 - name: Create pterodactyl User
   community.mysql.mysql_user:
@@ -17,3 +18,4 @@
     host: "10.210.30.%"
     priv: "{{ db_pterodactyl_database }}.*:ALL"
     state: present
+  become: true
