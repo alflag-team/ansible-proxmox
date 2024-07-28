@@ -3,6 +3,6 @@
   ansible.builtin.include_tasks:
     file: download.yml
 
-- name: install wings
+- name: setup daemon
   ansible.builtin.include_tasks:
-    file: install.yml
+    file: daemon.yml
