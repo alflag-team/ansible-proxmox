@@ -5,7 +5,7 @@
     uid: 1000
     password: "{{ user_infra_password | password_hash( 'sha512', user_infra_salt ) }}"
     update_password: always
-    ansible.builtin.group: infra
+    group: infra
     groups: sudo
     shell: /bin/bash
     create_home: true
@@ -18,7 +18,7 @@
     dest: "/home/{{ user_infra_name }}/.ssh/infra"
     mode: 0600
     owner: "{{ user_infra_name }}"
-    ansible.builtin.group: "{{ user_infra_name }}"
+    group: "{{ user_infra_name }}"
 
 - name: Set authorized key
   authorized_key:

@@ -4,7 +4,7 @@
     src: wings.service
     dest: /etc/systemd/system/wings.service
     owner: root
-    ansible.builtin.group: root
+    group: root
     mode: 0644
 
 - name: Enable wings service

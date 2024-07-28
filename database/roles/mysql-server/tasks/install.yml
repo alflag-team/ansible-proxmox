@@ -31,7 +31,7 @@
     src: ./etc/mysql/mysql.conf.d/mysqld.cnf
     dest: /etc/mysql/mysql.conf.d/mysqld.cnf
     owner: root
-    ansible.builtin.group: root
+    group: root
     mode: 0644
   become: true
   notify: restart mysql

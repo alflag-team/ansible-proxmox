@@ -4,7 +4,7 @@
     src: ./etc/zabbix/zabbix_agent2.conf
     dest: /etc/zabbix/zabbix_agent2.conf
     owner: root
-    ansible.builtin.group: root
+    group: root
     mode: 0644
   become: true
   notify: restart zabbix-agent
@@ -14,7 +14,7 @@
     path: /var/lib/zabbix
     state: directory
     owner: root
-    ansible.builtin.group: root
+    group: root
     mode: 0755
   become: true
   notify: restart zabbix-agent

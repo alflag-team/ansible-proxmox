@@ -4,7 +4,7 @@
     path: "/opt/kitsunebi"
     state: directory
     owner: minecraft
-    ansible.builtin.group: minecraft
+    group: minecraft
     mode: "0755"
   become: true
 

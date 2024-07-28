@@ -13,7 +13,7 @@
     src: ./etc/zabbix/zabbix_server.conf
     dest: /etc/zabbix/zabbix_server.conf
     owner: root
-    ansible.builtin.group: root
+    group: root
     mode: 0644
   become: true
   notify: restart zabbix-server
@@ -54,7 +54,7 @@
     src: ./etc/zabbix/zabbix_agent2.conf
     dest: /etc/zabbix/zabbix_agent2.conf
     owner: root
-    ansible.builtin.group: root
+    group: root
     mode: 0644
   become: true
   notify: restart zabbix-agent2

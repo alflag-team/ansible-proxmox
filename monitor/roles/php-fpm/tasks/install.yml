@@ -11,7 +11,7 @@
     src: 99-zabbix.ini
     dest: /etc/php/8.1/fpm/conf.d/99-zabbix.ini
     owner: root
-    ansible.builtin.group: root
+    group: root
     mode: 0644
   become: true
   notify: restart php8.1-fpm

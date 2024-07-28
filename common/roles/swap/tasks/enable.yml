@@ -8,7 +8,7 @@
   ansible.builtin.file:
     path: "{{ swap_file_path }}"
     owner: root
-    ansible.builtin.group: root
+    group: root
     mode: 0600
   become: true
   when: not swap_file.stat.exists

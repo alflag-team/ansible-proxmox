@@ -4,7 +4,7 @@
     path: "/opt/infra-core"
     state: directory
     owner: infra
-    ansible.builtin.group: infra
+    group: infra
     mode: "0755"
   become: true
 

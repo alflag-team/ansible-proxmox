@@ -5,7 +5,7 @@
     dest: "/home/infra/terraform"
     state: link
     owner: infra
-    ansible.builtin.group: infra
+    group: infra
   become: true
   become_user: infra
 
@@ -15,6 +15,6 @@
     dest: "/home/infra/ansible"
     state: link
     owner: infra
-    ansible.builtin.group: infra
+    group: infra
   become: true
   become_user: infra

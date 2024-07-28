@@ -4,7 +4,7 @@
     src: ./etc/ssh/sshd_config
     dest: /etc/ssh/sshd_config
     owner: root
-    ansible.builtin.group: root
+    group: root
     mode: 0644
   become: true
   notify:
@@ -15,7 +15,7 @@
     src: ./etc/ssh/sshd_config.d/99-password-auth
     dest: /etc/ssh/sshd_config.d/99-password-auth
     owner: root
-    ansible.builtin.group: root
+    group: root
     mode: 0644
   become: true
   notify:

@@ -5,7 +5,7 @@
     uid: 1001
     password: "{{ user_minecraft_password | password_hash( 'sha512', user_minecraft_salt ) }}"
     update_password: always
-    ansible.builtin.group: minecraft
+    group: minecraft
     groups: sudo
     shell: /bin/bash
     create_home: true
@@ -18,7 +18,7 @@
     state: directory
     mode: 0700
     owner: "{{ user_minecraft_name }}"
-    ansible.builtin.group: "{{ user_minecraft_name }}"
+    group: "{{ user_minecraft_name }}"
   become: true
   become_user: "{{ user_minecraft_name }}"
 
@@ -27,7 +27,7 @@
     src: "./.ssh/config"
     dest: "/home/{{ user_minecraft_name }}/.ssh/config"
     owner: "{{ user_minecraft_name }}"
-    ansible.builtin.group: "{{ user_minecraft_name }}"
+    group: "{{ user_minecraft_name }}"
     mode: 0644
 
 - name: Copy .gitconfig
@@ -35,7 +35,7 @@
     src: "./home/minecraft/.gitconfig"
     dest: "/home/{{ user_minecraft_name }}/.gitconfig"
     owner: "{{ user_minecraft_name }}"
-    ansible.builtin.group: "{{ user_minecraft_name }}"
+    group: "{{ user_minecraft_name }}"
     mode: 0600
 
 - name: Create symlink to kitsunebi
@@ -44,5 +44,5 @@
     dest: "/home/minecraft/kitsunebi"
     state: link
     owner: "{{ user_minecraft_name }}"
-    ansible.builtin.group: "{{ user_minecraft_name }}"
+    group: "{{ user_minecraft_name }}"
     force: true

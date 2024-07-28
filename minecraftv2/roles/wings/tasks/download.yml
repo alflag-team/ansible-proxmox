@@ -4,7 +4,7 @@
     path: "/etc/pterodactyl"
     state: directory
     owner: root
-    ansible.builtin.group: root
+    group: root
     mode: 0755
   become: true
 
@@ -19,6 +19,6 @@
   ansible.builtin.file:
     path: /usr/local/bin/wings
     owner: root
-    ansible.builtin.group: root
+    group: root
     mode: 0755
   become: true
