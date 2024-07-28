@@ -15,7 +15,7 @@
     login_unix_socket: "{{ db_login_unix_socket }}"
     name: "{{ db_pterodactyl_user }}"
     password: "{{ db_pterodactyl_password }}"
-    host: "10.210.30.%"
+    host: "localhost"
     priv: "{{ db_pterodactyl_database }}.*:ALL"
     state: present
   become: true
