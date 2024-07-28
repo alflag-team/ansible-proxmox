@@ -1,6 +1,6 @@
 ---
 - name: restart php8.1-fpm
-  service:
+  ansible.builtin.service:
     name: php8.1-fpm
     state: restarted
     enabled: true

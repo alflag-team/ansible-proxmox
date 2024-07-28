@@ -1,15 +1,15 @@
 ---
 - name: mkdir opt/kitsunebi directory
-  file:
+  ansible.builtin.file:
     path: "/opt/kitsunebi"
     state: directory
     owner: minecraft
-    group: minecraft
+    ansible.builtin.group: minecraft
     mode: "0755"
   become: true
 
 - name: Git clone kitsunebi
-  git:
+  ansible.builtin.git:
     repo: "https://github.com/mcplaynetwork/kitsunebi.git"
     dest: "/opt/kitsunebi"
     version: "master"

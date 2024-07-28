@@ -4,7 +4,7 @@
     src: ./etc/apt/apt.conf.d/20auto-upgrades
     dest: /etc/apt/apt.conf.d/20auto-upgrades
     owner: root
-    group: root
+    ansible.builtin.group: root
     mode: 0644
   become: true
   notify: restart unattended-upgrades
@@ -14,7 +14,7 @@
     src: ./etc/apt/apt.conf.d/50unattended-upgrades
     dest: /etc/apt/apt.conf.d/50unattended-upgrades
     owner: root
-    group: root
+    ansible.builtin.group: root
     mode: 0644
   become: true
   notify: restart unattended-upgrades

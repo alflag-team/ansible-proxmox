@@ -1,6 +1,6 @@
 ---
 - name: Install MySQL Server
-  apt:
+  ansible.builtin.apt:
     name:
       - mysql-server-8.0
       - mysql-client-8.0
@@ -27,17 +27,17 @@
     state: absent
 
 - name: Copy mysqld.cnf
-  copy:
+  ansible.builtin.copy:
     src: ./etc/mysql/mysql.conf.d/mysqld.cnf
     dest: /etc/mysql/mysql.conf.d/mysqld.cnf
     owner: root
-    group: root
+    ansible.builtin.group: root
     mode: 0644
   become: true
   notify: restart mysql
 
 - name: Enable MySQL Service
-  service:
+  ansible.builtin.service:
     name: mysql
     enabled: true
     state: started

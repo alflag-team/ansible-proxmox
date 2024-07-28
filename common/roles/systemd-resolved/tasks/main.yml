@@ -1,12 +1,12 @@
 ---
 - name: Setup configuration
-  include_tasks:
-    file: conf.yml
+  ansible.builtin.include_tasks:
+    ansible.builtin.file: conf.yml
   tags: systemd-resolved
   when: not skip_systemd_resolved | default(false)
 
 - name: Enable and start systemd-resolved
-  ansible.builtin.systemd:
+  ansible.builtin.systemd_service:
     name: systemd-resolved
     enabled: true
     state: started

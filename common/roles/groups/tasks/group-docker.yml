@@ -1,6 +1,6 @@
 ---
 - name: Create docker group
-  group:
+  ansible.builtin.group:
     name: "docker"
     gid: 999
     state: present

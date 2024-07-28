@@ -1,15 +1,15 @@
 ---
 - name: mkdir /opt/infra-core directory
-  file:
+  ansible.builtin.file:
     path: "/opt/infra-core"
     state: directory
     owner: infra
-    group: infra
+    ansible.builtin.group: infra
     mode: "0755"
   become: true
 
 - name: Git clone infra-core
-  git:
+  ansible.builtin.git:
     repo: "https://github.com/alflag-team/infra-core.git"
     dest: "/opt/infra-core"
     version: "master"

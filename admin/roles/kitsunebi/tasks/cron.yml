@@ -1,6 +1,6 @@
 ---
 - name: list.sh cron job
-  cron:
+  ansible.builtin.cron:
     name: "kitsunebi list.sh"
     weekday: "*"
     day: "*"

@@ -11,7 +11,7 @@
     src: ./etc/redis/redis.conf
     dest: /etc/redis/redis.conf
     owner: redis
-    group: redis
+    ansible.builtin.group: redis
     mode: 0644
   become: true
   notify: restart redis-server

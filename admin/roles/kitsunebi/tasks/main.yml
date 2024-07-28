@@ -1,12 +1,12 @@
 ---
 - name: install dependencies
-  include_tasks:
-    file: dependencies.yml
+  ansible.builtin.include_tasks:
+    ansible.builtin.file: dependencies.yml
 
 - name: install kitsunebi
-  include_tasks:
-    file: install.yml
+  ansible.builtin.include_tasks:
+    ansible.builtin.file: install.yml
 
 - name: Setup kitsunebi cron jobs
-  include_tasks:
-    file: cron.yml
+  ansible.builtin.include_tasks:
+    ansible.builtin.file: cron.yml

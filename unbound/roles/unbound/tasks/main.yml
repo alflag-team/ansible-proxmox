@@ -7,14 +7,14 @@
   become: true
 
 - name: Disable systemd-resolved
-  ansible.builtin.systemd:
+  ansible.builtin.systemd_service:
     name: systemd-resolved
     enabled: no
     state: stopped
   become: true
 
 - name: Enable unbound
-  ansible.builtin.systemd:
+  ansible.builtin.systemd_service:
     name: unbound
     enabled: yes
     state: started

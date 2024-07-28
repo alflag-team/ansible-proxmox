@@ -1,6 +1,6 @@
 ---
 - name: commit.sh cron job
-  cron:
+  ansible.builtin.cron:
     name: "kitsunebi commit.sh"
     weekday: "*"
     day: "*"
@@ -14,7 +14,7 @@
   become: true
 
 - name: backup.sh cron job
-  cron:
+  ansible.builtin.cron:
     name: "kitsunebi backup.sh"
     weekday: "*"
     day: "*"
@@ -28,7 +28,7 @@
   become: true
 
 - name: sync.sh cron job
-  cron:
+  ansible.builtin.cron:
     name: "kitsunebi sync.sh"
     weekday: "*"
     day: "*"

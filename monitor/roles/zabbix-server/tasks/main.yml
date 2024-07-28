@@ -1,6 +1,6 @@
 ---
 - name: Install Zabbix Server
-  apt:
+  ansible.builtin.apt:
     name:
       - zabbix-server-mysql
       - zabbix-frontend-php
@@ -13,13 +13,13 @@
     src: ./etc/zabbix/zabbix_server.conf
     dest: /etc/zabbix/zabbix_server.conf
     owner: root
-    group: root
+    ansible.builtin.group: root
     mode: 0644
   become: true
   notify: restart zabbix-server
 
 - name: Create Symbolic Link
-  file:
+  ansible.builtin.file:
     src: /usr/share/fonts/opentype/ipafont-gothic/ipag.ttf
     dest: /usr/share/zabbix/assets/fonts/ipag.ttf
     state: link
@@ -35,14 +35,14 @@
   notify: restart zabbix-server
 
 - name: Enable Zabbix Server
-  systemd:
+  ansible.builtin.systemd_service:
     name: zabbix-server
     enabled: true
     state: started
   become: true
 
 - name: Install Zabbix Agent
-  apt:
+  ansible.builtin.apt:
     name:
       - zabbix-agent2
       - zabbix-agent2-plugin-*
@@ -50,17 +50,17 @@
   become: true
 
 - name: Copy Zabbix Agent Configuration
-  copy:
+  ansible.builtin.copy:
     src: ./etc/zabbix/zabbix_agent2.conf
     dest: /etc/zabbix/zabbix_agent2.conf
     owner: root
-    group: root
+    ansible.builtin.group: root
     mode: 0644
   become: true
   notify: restart zabbix-agent2
 
 - name: Enable Zabbix Agent
-  systemd:
+  ansible.builtin.systemd_service:
     name: zabbix-agent2
     enabled: true
     state: started

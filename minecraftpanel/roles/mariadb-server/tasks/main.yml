@@ -1,8 +1,8 @@
 ---
 - name: install mariadb-server
   ansible.builtin.include_tasks:
-    file: install.yml
+    ansible.builtin.file: install.yml
 
 - name: setup pterodactyl database
   ansible.builtin.include_tasks:
-    file: db_pterodactyl.yml
+    ansible.builtin.file: db_pterodactyl.yml

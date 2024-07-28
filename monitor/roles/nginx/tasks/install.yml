@@ -1,6 +1,6 @@
 ---
 - name: Install Nginx
-  apt:
+  ansible.builtin.apt:
     name:
       - nginx
     state: present
@@ -14,7 +14,7 @@
   notify: restart nginx
 
 - name: Enable Nginx
-  systemd:
+  ansible.builtin.systemd_service:
     name: nginx
     enabled: true
     state: started

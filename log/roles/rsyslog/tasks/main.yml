@@ -1,13 +1,13 @@
 ---
 - name: Install rsyslog
-  apt:
+  ansible.builtin.apt:
     name:
       - rsyslog
     state: present
   become: true
 
 - name: Enable rsyslog Service
-  service:
+  ansible.builtin.service:
     name: rsyslog
     enabled: true
     state: started
