@@ -6,9 +6,11 @@
     owner: root
     group: root
     mode: 0644
+  become: true
 
 - name: Enable wings service
   ansible.builtin.systemd_service:
     name: wings
     enabled: yes
     state: started
+  become: true
