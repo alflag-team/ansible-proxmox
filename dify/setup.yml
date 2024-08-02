@@ -1,0 +1,8 @@
+---
+- name: Setup dify
+  hosts: dify
+  ignore_unreachable: true
+
+  roles:
+    - apt
+    - docker
