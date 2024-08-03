@@ -5,6 +5,5 @@
 
   roles:
     - ../../ansible-common/base
-    - apt
     - docker
     - wings

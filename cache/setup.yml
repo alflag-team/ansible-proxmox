@@ -5,5 +5,4 @@
 
   roles:
     - ../../ansible-common/base
-    - apt
     - redis-server
