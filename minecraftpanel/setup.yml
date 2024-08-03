@@ -4,6 +4,7 @@
   ignore_unreachable: true
 
   roles:
+    - ../../ansible-common/base
     - mariadb-server
     - redis-server
     - php

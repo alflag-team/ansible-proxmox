@@ -4,6 +4,7 @@
   ignore_unreachable: true
 
   roles:
+    - ../../ansible-common/base
     - apt
     - mysql-server
     - nginx

@@ -4,6 +4,7 @@
   ignore_unreachable: true
 
   roles:
+    - ../../ansible-common/base
     - apt
     - python3-pip
     - infra-core
