@@ -10,4 +10,5 @@
     - infra-core
     - kitsunebi
     - ansible
+    - ../../ansible-common/docker
     # - terraform
