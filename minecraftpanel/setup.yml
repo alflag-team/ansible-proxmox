@@ -5,7 +5,4 @@
 
   roles:
     - ../../ansible-common/base
-    - mariadb-server
-    - redis-server
-    - php
-    - nginx
+    - ../../ansible-common/docker
