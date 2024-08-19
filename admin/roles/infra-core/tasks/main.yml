@@ -1,9 +1,0 @@
----
-- name: Install infra-core
-  ansible.builtin.include_tasks:
-    file: install.yml
-
-- name: Symlink infra-core
-  ansible.builtin.include_tasks:
-    file: symlink.yml
-

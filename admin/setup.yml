@@ -7,7 +7,6 @@
     - ../../ansible-common/base
     - apt
     - python3-pip
-    - infra-core
     - kitsunebi
     - ansible
     - ../../ansible-common/docker
