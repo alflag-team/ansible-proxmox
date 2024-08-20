@@ -6,5 +6,5 @@
   roles:
     - ../../ansible-common/base
     - apt
-    - docker
+    - ../../ansible-common/docker
     #- cloudflared
