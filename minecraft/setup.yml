@@ -6,5 +6,5 @@
   roles:
     - ../../ansible-common/base
     - ../../ansible-common/docker
-    - restic
+    - ../../ansible-common/restic
     - ../../ansible-common/kitsunebi
