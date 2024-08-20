@@ -6,4 +6,4 @@
   roles:
     - ../../ansible-common/base
     - ../../ansible-common/docker
-    - wings
+    - ../../ansible-common/wings
