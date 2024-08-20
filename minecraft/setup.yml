@@ -7,4 +7,4 @@
     - ../../ansible-common/base
     - ../../ansible-common/docker
     - restic
-    - kitsunebi
+    - ../../ansible-common/kitsunebi
