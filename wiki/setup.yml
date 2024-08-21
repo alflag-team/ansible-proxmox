@@ -1,0 +1,8 @@
+---
+- name: Setup wiki
+  hosts: wiki
+  ignore_unreachable: true
+
+  roles:
+    - ../../ansible-common/base
+    - ../../ansible-common/docker
