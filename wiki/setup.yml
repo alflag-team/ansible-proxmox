@@ -5,4 +5,4 @@
 
   roles:
     - ../../ansible-common/base
-#    - ../../ansible-common/caddy
+    - ../../ansible-common/caddy
