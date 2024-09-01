@@ -5,4 +5,5 @@
 
   roles:
     - ../../ansible-common/base
+    - ../../ansible-common/php
     - ../../ansible-common/caddy
