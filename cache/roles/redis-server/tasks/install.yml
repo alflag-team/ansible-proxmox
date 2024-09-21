@@ -1,4 +1,31 @@
 ---
+- name: Install lsb-release curl gpg
+  ansible.builtin.apt:
+    name:
+      - lsb-release
+      - curl
+      - gpg
+    state: present
+  become: true
+
+- name: Download redis-archive-keyring
+  ansible.builtin.get_url:
+    url: https://packages.redis.io/gpg
+    dest: /usr/share/keyrings/redis-archive-keyring.gpg
+  become: true
+
+- name: Add redis repository
+  ansible.builtin.apt_repository:
+    repo: deb [signed-by=/usr/share/keyrings/redis-archive-keyring.gpg] https://packages.redis.io/deb $(lsb_release -cs) main
+    state: present
+  become: true
+
+- name: Install redis-archive-keyring
+  ansible.builtin.get_url:
+    url: https://packages.redis.io/gpg
+    dest: /usr/share/keyrings/redis-archive-keyring.gpg
+  become: true
+
 - name: Install redis-server
   ansible.builtin.apt:
     name:
