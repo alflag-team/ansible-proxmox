@@ -8,22 +8,24 @@
     state: present
   become: true
 
+- name: Create /etc/apt/keyrings
+  ansible.builtin.file:
+    path: /etc/apt/keyrings
+    state: directory
+    mode: 0755
+  become: true
+
 - name: Download redis-archive-keyring
   ansible.builtin.get_url:
     url: https://packages.redis.io/gpg
     dest: /usr/share/keyrings/redis-archive-keyring.gpg
+    mode: 0644
   become: true
 
 - name: Add redis repository
   ansible.builtin.apt_repository:
     repo: deb [signed-by=/usr/share/keyrings/redis-archive-keyring.gpg] https://packages.redis.io/deb {{ ansible_distribution_release }} main
     state: present
-  become: true
-
-- name: Install redis-archive-keyring
-  ansible.builtin.get_url:
-    url: https://packages.redis.io/gpg
-    dest: /usr/share/keyrings/redis-archive-keyring.gpg
   become: true
 
 - name: Install redis-server
