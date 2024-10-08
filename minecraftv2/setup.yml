@@ -6,3 +6,4 @@
   roles:
     - ../../ansible-common/base
     - ../../ansible-common/docker
+    - ../../ansible-common/ptero
